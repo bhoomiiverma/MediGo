@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-feature-settings: "rlig" 1, "calt" 0.1;
+  }
+  html, body, #root {
+    height: 100%;
+  }
+}
+
+@layer components {
+  .sidebar-link {
+    @apply flex items-center gap-3 w-full px-3 py-2.5 text-sm font-medium rounded-lg transition-colors focus:outline-none;
+  }
+  .sidebar-link.active {
+    @apply bg-blue-900/20 text-blue-300 border-r-2 border-blue-500;
+  }
+  .sidebar-link.inactive {
+    @apply text-slate-400 hover:bg-slate-100/50 hover:text-slate-700;
+  }
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm;
+  }
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
